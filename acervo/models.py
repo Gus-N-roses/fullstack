@@ -18,6 +18,7 @@ class Livro(models.Model):
         ('500', '500 – Ciências Puras (Exatas e Naturais)'),
         ('600', '600 – Ciências Aplicadas (Tecnologia)'),
         ('700', '700 – Artes e Recreação'),
+        ('800', '800 – Literatura'),
     ]
 
     titulo = models.CharField(max_length=200)
