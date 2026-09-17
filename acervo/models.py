@@ -2,10 +2,27 @@ from django.db import models
 
 
 class Livro(models.Model):
+    DIGITAL = 'DIGITAL'
+    FISICO = 'FISICO'
+    TIPO_ACERVO_CHOICES = [
+        (DIGITAL, 'Digital'),
+        (FISICO, 'Físico'),
+    ]
+
+    CATEGORIA_CHOICES = [
+        ('000', '000 – Generalidades e Informação'),
+    ]
+
     titulo = models.CharField(max_length=200)
     autor = models.CharField(max_length=100)
     ano = models.IntegerField()
     disponivel = models.BooleanField(default=True)
+    tipo_acervo = models.CharField(
+        max_length=10, choices=TIPO_ACERVO_CHOICES, default=FISICO
+    )
+    categoria = models.CharField(
+        max_length=3, choices=CATEGORIA_CHOICES, default='000'
+    )
 
     def __str__(self):
         return self.titulo
