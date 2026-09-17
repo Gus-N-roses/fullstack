@@ -12,6 +12,7 @@ class Livro(models.Model):
     CATEGORIA_CHOICES = [
         ('000', '000 – Generalidades e Informação'),
         ('100', '100 – Filosofia e Psicologia'),
+        ('200', '200 – Religião e Teologia'),
     ]
 
     titulo = models.CharField(max_length=200)
